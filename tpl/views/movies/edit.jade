@@ -1,10 +1,10 @@
 extends ../layouts/layout
 
 block content
-  h1 Editing movie
+  h1 Editing {{model}}
 
-  include movie
+  include {{model}}
 
-  a(href='/movies/#{movie._id}') Show
-  a(href='/movies') Back
+  a(href='/{{models}}/#{ {{model}}._id}') Show
+  a(href='/{{models}}') Back
 

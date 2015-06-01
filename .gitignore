@@ -4,4 +4,4 @@ public/upload/*
 public/html/*
 npm-debug.log
 tmp/**
-out/*.js
+out/**/*

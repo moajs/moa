@@ -1,7 +1,7 @@
 extends ../layouts/layout
 
 block content
-  h1 Listing movies
+  h1 Listing {{models}}
 
   table
     thead
@@ -10,18 +10,18 @@ block content
         th Age
         th(colspan="3")
     tbody
-      each movie in movies
+      each {{model}} in {{models}}
         tr
           td #{movie.name}
           td #{movie.age}
           td 
-            a(href='/movies/#{movie._id}') Show
+            a(href='/{{models}}/#{ {{model}}._id}') Show
           td 
-            a(href='/movies/#{movie._id}/edit') Edit
+            a(href='/{{models}}/#{ {{model}}._id}/edit') Edit
           td 
-            a(onclick="click_del('/movies/#{movie._id}/')") Delete
+            a(onclick="click_del('/{{models}}/#{ {{model}}._id}/')") Delete
 
   br
 
   p 
-    a(href='/movies/new') New Movie
+    a(href='/{{models}}/new') New {{entity}}

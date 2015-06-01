@@ -5,11 +5,11 @@ block content
 
   p
     strong Name:
-    span #{movie.name}
+    span #{ {{model}}.name}
   p
     strong Age:
-    span #{movie.age}
+    span #{ {{model}}.age}
 
-  a(href='/movies/#{movie._id}/edit') Edit
+  a(href='/{{models}}/#{ {{model}}._id}/edit') Edit
   span |
-  a(href='/movies') Back
+  a(href='/{{models}}') Back
