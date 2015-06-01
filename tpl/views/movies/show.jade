@@ -1,0 +1,15 @@
+extends ../layouts/layout
+
+block content
+  p#notice
+
+  p
+    strong Name:
+    span #{movie.name}
+  p
+    strong Age:
+    span #{movie.age}
+
+  a(href='/movies/#{movie._id}/edit') Edit
+  span |
+  a(href='/movies') Back

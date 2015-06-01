@@ -1,0 +1,10 @@
+extends ../layouts/layout
+
+block content
+  h1 Editing movie
+
+  include movie
+
+  a(href='/movies/#{movie._id}') Show
+  a(href='/movies') Back
+

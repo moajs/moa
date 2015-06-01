@@ -1,0 +1,27 @@
+extends ../layouts/layout
+
+block content
+  h1 Listing movies
+
+  table
+    thead
+      tr
+        th Name
+        th Age
+        th(colspan="3")
+    tbody
+      each movie in movies
+        tr
+          td #{movie.name}
+          td #{movie.age}
+          td 
+            a(href='/movies/#{movie._id}') Show
+          td 
+            a(href='/movies/#{movie._id}/edit') Edit
+          td 
+            a(onclick="click_del('/movies/#{movie._id}/')") Delete
+
+  br
+
+  p 
+    a(href='/movies/new') New Movie

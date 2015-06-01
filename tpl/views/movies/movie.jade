@@ -1,0 +1,15 @@
+- var _action = movie._action == 'edit' ? '#' : '/movies/'
+- var _method = movie._action == 'edit' ? ""  : "post"
+- var _type   = movie._action == 'edit' ? "button"  : "submit"
+- var onClick  = movie._action == 'edit' ?  "click_edit('movie-" + movie._action + "-form','/movies/" + movie._id + "/')" : ""
+form(id='movie-#{movie._action}-form',action="#{_action}", method="#{_method}",role='form')
+  div(class="field")
+    label name
+    br
+    input(type='text',name='name',value="#{movie.name == undefined ? '' : movie.name}")
+  div(class="field")
+    label age
+    br
+    input(type='text',name='age',value="#{movie.age == undefined ? '' : movie.age}")
+  div(class="actions") 
+    input(type='#{_type}',value='Submit',onClick='#{onClick}')
