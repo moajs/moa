@@ -1,20 +1,20 @@
 var express = require('express');
 var router = express.Router();
 
-var $ = require('../controllers/movies_controller');
+var $ = require('../controllers/{{models}}_controller');
 
 /**
  * Auto generate RESTful url routes.
  *
  * URL routes:
  *
- *  GET    /movies[/]        => movie.list()
- *  GET    /movies/new       => movie.new()
- *  GET    /movies/:id       => movie.show()
- *  GET    /movies/:id/edit  => movie.edit()
- *  POST   /movies[/]        => movie.create()
- *  PATCH  /movies/:id       => movie.update()
- *  DELETE /movies/:id       => movie.destroy()
+ *  GET    /{{models}}[/]        => {{model}}.list()
+ *  GET    /{{models}}/new       => {{model}}.new()
+ *  GET    /{{models}}/:id       => {{model}}.show()
+ *  GET    /{{models}}/:id/edit  => {{model}}.edit()
+ *  POST   /{{models}}[/]        => {{model}}.create()
+ *  PATCH  /{{models}}/:id       => {{model}}.update()
+ *  DELETE /{{models}}/:id       => {{model}}.destroy()
  *
  */
 
