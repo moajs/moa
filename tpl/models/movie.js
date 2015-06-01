@@ -6,12 +6,11 @@ var mongoose    = require('mongoose');
 var Schema      = mongoose.Schema;
 var MongooseDao = require('mongoosedao');
 
-var movieSchema = new Schema({
-    name:String,
-    age:String
-});
+var {{model}}Schema = new Schema(
+    {{{attrs}}}
+);
 
-var Movie = mongoose.model('Movie', movieSchema);
-var MovieDao = new MongooseDao(Movie);
+var {{entity}} = mongoose.model('{{entity}}', {{model}}Schema);
+var {{entity}}Dao = new MongooseDao({{entity}});
  
-module.exports = MovieDao;
+module.exports = {{entity}}Dao;

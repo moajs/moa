@@ -57,10 +57,7 @@ exports.create = function (req, res, next) {
   console.log(req.method + ' /{{models}} => create, query: ' + JSON.stringify(req.query) + 
     ', params: ' + JSON.stringify(req.params) + ', body: ' + JSON.stringify(req.body));
   
-    {{entity}}.create({
-      name : req.body.name,
-      age : req.body.age,
-    }, function(err, {{model}}){
+    {{entity}}.create({{keypair}}, function(err, {{model}}){
       console.log({{model}});
       res.render('{{models}}/show', {
         {{model}} : {{model}}
@@ -75,10 +72,7 @@ exports.update = function (req, res, next) {
     
     var id = req.params.id; 
   
-    {{entity}}.updateById(id,{
-      name : req.body.name,
-      age  : req.body.age
-    }, function(err, {{model}}){
+    {{entity}}.updateById(id,{{keypair}}, function(err, {{model}}){
       console.log({{model}});
     
       res.json({
