@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "npm publish .",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "node test.js"
   },
   "repository": {
     "type": "git",
@@ -21,6 +21,7 @@
     "handlebars": "^3.0.3",
     "i": "^0.3.3",
     "inflected": "^1.1.6",
+    "shelljs": "^0.5.0",
     "tpl_apply": "^1.0.2"
   }
 }
