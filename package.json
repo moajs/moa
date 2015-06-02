@@ -1,6 +1,6 @@
 {
   "name": "express-g",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -23,6 +23,7 @@
   "homepage": "https://github.com/i5ting/express-g#readme",
   "dependencies": {
     "inflected": "^1.1.6",
+    "mkdirp": "^0.5.1",
     "tpl_apply": "^1.0.2"
   },
   "devDependencies": {

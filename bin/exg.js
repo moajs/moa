@@ -15,7 +15,7 @@ console.log(argv)
 // console.log('base = ' + base)
 
 var model = {
-  base_path : current_path + '/out/app',
+  base_path : current_path + '/app',
   entity:'user',
   attr:{
     username: 'string',

@@ -36,6 +36,35 @@ function g (obj, opts) {
   
   _cp(this.option, opts);
   _cp(this, this.option);
+  
+  _mkdir(this);
+}
+
+function _mkdir(t){
+  
+  console.log(t)
+  
+  var mkdirp = require('mkdirp');
+  
+  mkdirp(t.controller_path, function (err) {
+      if (err) console.error(err)
+      else console.log('pow! create controller_path')
+  });
+  
+  mkdirp(t.model_path, function (err) {
+      if (err) console.error(err)
+      else console.log('pow! create model_path')
+  });
+  
+  mkdirp(t.view_path, function (err) {
+      if (err) console.error(err)
+      else console.log('pow! create view_path')
+  });
+  
+  mkdirp(t.route_path, function (err) {
+      if (err) console.error(err)
+      else console.log('pow! create route_path')
+  });
 }
 
 g.prototype.c = function () {
