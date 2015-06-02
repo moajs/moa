@@ -1,7 +1,19 @@
-# moajs
+# Moajs
 
-moajs is a generator based expressjs
+Moajs is a full stack framework based expressjs、mongoose、bluebird、mocha.
 
+[![gitter][gitter-image]][gitter-url]
+[![NPM version][npm-image]][npm-url]
+
+* Allows to configure cache size and policy.
+* auto mount routes
+* use mongoosedao for data access
+* use gulp as task management
+* live reload.
+
+![](doc/moa.jpg)
+
+> "Lost, like the Moa is lost" - Maori proverb
 
 ## Feature
 
@@ -18,7 +30,6 @@ app/movies
     - new.jade   
     - show.jade
 ```
-
 
 
 ## Install
@@ -104,7 +115,7 @@ this repo is released under the [MIT
 License](http://www.opensource.org/licenses/MIT).
 
 
-[npm-image]: https://img.shields.io/npm/v/mount-routes.svg?style=flat-square
-[npm-url]: https://npmjs.org/package/mount-routes
+[npm-image]: https://img.shields.io/npm/v/moajs.svg?style=flat-square
+[npm-url]: https://npmjs.org/package/moajs
 [gitter-image]: https://badges.gitter.im/Join%20Chat.svg
-[gitter-url]: https://gitter.im/i5ting/mount-routes?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge
+[gitter-url]: https://gitter.im/i5ting/moajs?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge
