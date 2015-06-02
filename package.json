@@ -18,10 +18,10 @@
   },
   "homepage": "https://github.com/i5ting/express-g#readme",
   "dependencies": {
-    "handlebars": "^3.0.3",
-    "i": "^0.3.3",
     "inflected": "^1.1.6",
-    "shelljs": "^0.5.0",
     "tpl_apply": "^1.0.2"
+  },
+  "devDependencies": {
+    "shelljs": "^0.5.0"
   }
 }
