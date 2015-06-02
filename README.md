@@ -27,18 +27,35 @@ app/movies
     
 ## usage
 
-    var obj = {
-        _p : __dirname,
-        model: user,
-        attrs:{
-            username : string
-            password : string
-        }
+
+### basic 
+
+    var current_path = process.cwd();
+    var base = current_path + '/out/app'
+    
+    var model = {
+      base_path : base,
+      entity:'user',
+      attr:{
+        username: 'string',
+        password: 'string'
+      }
     }
+
+    var Generator = require('./index');
+    var g = new Generator(model,{});
+
+    g.all();
+
+### cli   
+
+create scaffold user
+
+    exg user name:string password:string
     
-    var g = require('express-g')(obj);
-    g.generate();
-    
+destroy scaffold user,this will move user to `~/.express-g/xxxx`
+
+    exd user
 
 ## Contributing
 
