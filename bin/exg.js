@@ -5,17 +5,17 @@ var child_process = require('child_process');
 var argv = process.argv;
 argv.shift();
 
-var file_path = __dirname;
+// var file_path = __dirname;
 var current_path = process.cwd();
 
 console.log(argv)
 
-var base = current_path + '/out/app'
+// var base = current_path + '/out/app'
 
-console.log('base = ' + base)
+// console.log('base = ' + base)
 
 var model = {
-  base_path : base,
+  base_path : current_path + '/out/app',
   entity:'user',
   attr:{
     username: 'string',
@@ -27,7 +27,10 @@ if(argv.length < 2){
   return console.log('Usages: exg user name:string password:string');
 }
 
-model.entity = argv[0];
+//model.entity = argv[0]; 
+// for test
+
+model.entity = argv[1];
 
 argv.shift();
 
@@ -46,7 +49,8 @@ for(var i in argv){
   // 
 }
 
-console.log(model);
+console.dir('------------------------');
+console.dir(model);
 
 var Generator = require('../index');
 var g = new Generator(model,{});
