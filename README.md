@@ -1,6 +1,6 @@
-# -g
+# express-g
 
-http://www.tuicool.com/articles/qeuMJfn
+express-g is a generator based expressjs
 
 
 ## Feature

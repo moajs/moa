@@ -5,7 +5,7 @@ var util = require("util");
 // var file_path = __dirname;
 // var current_path = process.cwd();
 
-var default_options = function (base_path){
+var _default_options = function (base_path){
   return {
     controller_path : base_path + '/controllers',
     model_path      : base_path + '/models',
@@ -14,7 +14,7 @@ var default_options = function (base_path){
   }
 }
 
-function cp(des, src) {
+function _cp(des, src) {
   if (!des) {
     des = {};
   }
@@ -32,26 +32,23 @@ function g (obj, opts) {
   this.root_path = __dirname;
   this.base_path = obj.base_path;
   
-  this.option = default_options(this.base_path);
+  this.option = _default_options(this.base_path);
   
-  cp(this.option, opts);
-  cp(this, this.option);
+  _cp(this.option, opts);
+  _cp(this, this.option);
 }
 
 g.prototype.c = function () {
   require('./lib/controller')(this)
 }
 
-
 g.prototype.m = function () {
   require('./lib/model')(this)
 }
 
-
 g.prototype.v = function () {
   require('./lib/view')(this)
 }
-
 
 g.prototype.r = function () {
   require('./lib/route')(this)
