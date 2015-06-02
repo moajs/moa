@@ -7,6 +7,10 @@
     "start": "npm publish .",
     "test": "node test.js"
   },
+  "preferGlobal": "true",
+  "bin": {
+    "exg": "bin/exg.js"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/i5ting/express-g.git"
