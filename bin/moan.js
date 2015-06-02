@@ -32,8 +32,9 @@ if (exec(clone).code !== 0) {
   echo('Success: exn clone finished!');
 }
 
-
 cd(project_name);
+
+echo('npm install...');
 
 var npm_install = 'npm install'
 if (exec(npm_install).code !== 0) {
@@ -43,3 +44,7 @@ if (exec(npm_install).code !== 0) {
   echo('Success: npm_install finished!');
 }
 
+echo('Next step 0: npm start');
+echo('Next step 1: moag user name:string password:string uid:object');
+echo('Next step 2: moad user');
+echo('Have a good day! Moaer');

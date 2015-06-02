@@ -15,23 +15,6 @@ Moajs is a full stack framework based expressjs、mongoose、bluebird、mocha.
 
 > "Lost, like the Moa is lost" - Maori proverb
 
-## Feature
-
-create
-
-```
-app/controllers/movies_controller.js
-app/models/movie.js
-app/routes/movies.js
-app/movies
-    - edit.jade  
-    - index.jade 
-    - movie.jade 
-    - new.jade   
-    - show.jade
-```
-
-
 ## Install
 
 
@@ -63,7 +46,7 @@ app/movies
 
 1.create scaffold user
 
-    exg user name:string password:object
+    moag user name:string password:object
     
     
 mongoose支持的data type基本如下：
@@ -81,11 +64,11 @@ mongoose支持的data type基本如下：
     
 2.destroy scaffold user,this will move user to `~/.moajs/xxxx`
 
-    exd user
+    moad user
     
 3.new a project in cli
 
-    exn new_project
+    moan new_project
 
 ## Contributing
 
@@ -94,7 +77,6 @@ mongoose支持的data type基本如下：
 3. Commit your changes (`git commit -am 'Add some feature'`)
 4. Push to the branch (`git push origin my-new-feature`)
 5. Create new Pull Request
-
 
 ## 版本历史
 

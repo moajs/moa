@@ -8,12 +8,6 @@ argv.shift();
 // var file_path = __dirname;
 var current_path = process.cwd();
 
-console.log(argv)
-
-// var base = current_path + '/out/app'
-
-// console.log('base = ' + base)
-
 var model = {
   base_path : current_path + '/app',
   entity:'entity',
@@ -24,14 +18,9 @@ if(argv.length < 2){
   return console.log('Usages: exg user name:string password:string');
 }
 
-//model.entity = argv[0]; 
-// for test
-
 model.entity = argv[1];
 
 argv.shift();
-
-console.log(argv)
 
 for(var i in argv){
   var _attr = argv[i];
@@ -43,16 +32,10 @@ for(var i in argv){
     var v = _attr_arr[1];
     model.attr[k] = v
   }
-  // 
 }
 
-console.dir('------------------------');
-console.dir(model);
-
+// main
 var Generator = require('../index');
 var g = new Generator(model,{});
 
 g.all();
- 
-
-  
