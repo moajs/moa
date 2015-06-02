@@ -3,12 +3,10 @@ extends ../layouts/layout
 block content
   p#notice
 
-  p
-    strong Name:
-    span #{ {{model}}.name}
-  p
-    strong Age:
-    span #{ {{model}}.age}
+  each n in [{{{keys}}}]
+    p
+      strong #{n}:
+      span #{ {{model}}.name}
 
   a(href='/{{models}}/#{ {{model}}._id}/edit') Edit
   span |
