@@ -78,14 +78,14 @@ mongoose支持的data type基本如下：
 4. Push to the branch (`git push origin my-new-feature`)
 5. Create new Pull Request
 
-## 版本历史
+## History
 
 - v1.0.4 add exd to destroy it
 - v1.0.2 rename index to /
-- v1.0.0 初始化版本
+- v1.0.0 init
 
 
-## 欢迎fork和反馈
+## Welcome fork and feedback
 
 - write by `i5ting` shiren1118@126.com
 
