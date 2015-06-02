@@ -15,3 +15,8 @@ exports.model = model;
 exports.root_path = __dirname;
 
 
+exports.controller_path = this.root_path + '/out/controllers'
+exports.model_path = this.root_path + '/out/models'
+exports.view_path = this.root_path + '/out/views'
+exports.route_path = this.root_path + '/out/routes'
+
