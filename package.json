@@ -7,12 +7,14 @@
     "start": "npm publish .",
     "test": "node test.js",
     "exg":"node bin/exg.js user name:string password:string uid:object",
-    "exd":"node bin/exd.js user"
+    "exd":"node bin/exd.js user",
+    "exn":"node bin/exn.js new_project"
   },
   "preferGlobal": "true",
   "bin": {
     "exg": "bin/exg.js",
-    "exd": "bin/exd.js"
+    "exd": "bin/exd.js",
+    "exn": "bin/exn.js"
   },
   "repository": {
     "type": "git",
