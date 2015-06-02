@@ -20,6 +20,7 @@ app/movies
 ```
 
 
+
 ## Install
 
 
@@ -51,7 +52,21 @@ app/movies
 
 create scaffold user
 
-    exg user name:string password:string
+    exg user name:string password:object
+    
+    
+mongoose支持的data type基本如下：
+
+• String -> string
+• Number-> number
+• Date -> date
+• Boolean -> boolean
+• Buffer -> buffer
+• ObjectId -> object
+• Mixed  -> mixed
+• Array -> array
+
+    
     
 destroy scaffold user,this will move user to `~/.express-g/xxxx`
 

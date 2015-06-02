@@ -7,7 +7,7 @@ var Schema      = mongoose.Schema;
 var MongooseDao = require('mongoosedao');
 
 var {{model}}Schema = new Schema(
-    {{{attrs}}}
+    {{{mongoose_attrs}}}
 );
 
 var {{entity}} = mongoose.model('{{entity}}', {{model}}Schema);

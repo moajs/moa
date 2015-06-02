@@ -6,7 +6,7 @@
   "scripts": {
     "start": "npm publish .",
     "test": "node test.js",
-    "exg":"node bin/exg.js user name:string password:string",
+    "exg":"node bin/exg.js user name:string password:string uid:object",
     "exd":"node bin/exd.js user"
   },
   "preferGlobal": "true",
