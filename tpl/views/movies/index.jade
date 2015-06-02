@@ -12,8 +12,8 @@ block content
     tbody
       each {{model}} in {{models}}
         tr
-          each n in [{{{keys}}}]
-            td #{ {{model}}.n}
+          each n in [{{{model_dot_attrs}}}]
+            td #{ eval(n) }
           td 
             a(href='/{{models}}/#{ {{model}}._id}') Show
           td 

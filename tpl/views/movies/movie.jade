@@ -3,11 +3,12 @@
 - var _type   = {{model}}._action == 'edit' ? "button"  : "submit"
 - var onClick  = {{model}}._action == 'edit' ?  "click_edit('{{model}}-" + {{model}}._action + "-form','/{{models}}/" + {{model}}._id + "/')" : ""
 form(id='{{model}}-#{ {{model}}._action}-form',action="#{_action}", method="#{_method}",role='form')
-  each n in [{{{keys}}}]
+  each n in [{{{model_dot_attrs}}}]
+    - m = eval(n);
     div(class="field")
-      label n
+      label #{n.split('.')[1]} #{m}
       br
-      input(type='text',name='#{n}',value="#{ {{model}} }.name == undefined ? '' : {{model}}.name}")
-
+      input(type='text',name="#{n.split('.')[1]}" ,value="#{ m == undefined ? '' : m }")
+        
   div(class="actions") 
     input(type='#{_type}',value='Submit',onClick='#{onClick}')

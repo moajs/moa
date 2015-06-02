@@ -3,10 +3,10 @@ extends ../layouts/layout
 block content
   p#notice
 
-  each n in [{{{keys}}}]
+  each n in [{{{model_dot_attrs}}}]
     p
-      strong #{n}:
-      span #{ {{model}}.n }
+      strong #{n.split('.')[1]}:
+      span #{eval(n)}
 
   a(href='/{{models}}/#{ {{model}}._id}/edit') Edit
   span |
