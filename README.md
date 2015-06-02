@@ -3,6 +3,8 @@
 http://www.tuicool.com/articles/qeuMJfn
 
 
+## Feature
+
 create
 
 ```
@@ -16,3 +18,25 @@ app/movies
     - new.jade   
     - show.jade
 ```
+
+
+## Install
+
+
+    npm install --save express-g
+    
+## usage
+
+    var obj = {
+        _p : __dirname,
+        model: user,
+        attrs:{
+            username : string
+            password : string
+        }
+    }
+    
+    var g = require('express-g')(obj);
+    g.generate();
+    
+    
