@@ -1,4 +1,9 @@
+require('shelljs/global');
+
 var util = require("util");
+var mkdirp = require('mkdirp');
+var Inflector = require('inflected');
+var tpl = require('tpl_apply');
 
 // util.inherits(MyStream, events.EventEmitter);
 
@@ -41,11 +46,6 @@ function g (obj, opts) {
 }
 
 function _mkdir(t){
-  
-  console.log(t)
-  
-  var mkdirp = require('mkdirp');
-  
   mkdirp(t.controller_path, function (err) {
       if (err) console.error(err)
       else console.log('pow! create controller_path')
@@ -88,6 +88,25 @@ g.prototype.all = function () {
   this.m();
   this.v();
   this.r();
+}
+
+g.prototype.destroy = function () {
+  var entity = this.model.entity;
+  var cache_path = '~/.express-g/' + Date.now();
+  
+  mkdirp(cache_path, function (err) {
+      if (err) console.error(err)
+      else console.log('pow! create controller_path')
+  });
+  
+  var c = this.controller_path  +'/'+ Inflector.pluralize(entity) + "_controller.js";
+  var m = this.model_path  +'/'+ entity + ".js";
+  var v = this.view_path  +'/'+ Inflector.pluralize(entity) + "/";
+  var r = this.route_path  +'/'+ Inflector.pluralize(entity) + ".js";
+  
+  [c,m,v,r].forEach(function(file){
+    mv('-f', file, cache_path + '/');
+  });
 }
 
 module.exports = g;
