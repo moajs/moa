@@ -1,14 +1,14 @@
 {
-  "name": "express-g",
-  "version": "1.0.9",
+  "name": "moajs",
+  "version": "1.0.10",
   "description": "",
   "main": "index.js",
   "scripts": {
     "start": "npm publish .",
     "test": "node test.js",
-    "exg":"node bin/exg.js user name:string password:string uid:object",
-    "exd":"node bin/exd.js user",
-    "exn":"node bin/exn.js new_project"
+    "exg":"node bin/moag.js user name:string password:string uid:object",
+    "exd":"node bin/moad.js user",
+    "exn":"node bin/moan.js new_project"
   },
   "preferGlobal": "true",
   "bin": {
@@ -18,14 +18,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/i5ting/express-g.git"
+    "url": "git+https://github.com/moajs/moa.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/i5ting/express-g/issues"
+    "url": "https://github.com/moajs/moa/issues"
   },
-  "homepage": "https://github.com/i5ting/express-g#readme",
+  "homepage": "https://github.com/moajs/moa#readme",
   "dependencies": {
     "inflected": "^1.1.6",
     "mkdirp": "^0.5.1",

@@ -1,6 +1,6 @@
-# express-g
+# moajs
 
-express-g is a generator based expressjs
+moajs is a generator based expressjs
 
 
 ## Feature
@@ -24,7 +24,7 @@ app/movies
 ## Install
 
 
-    npm install --save express-g
+    npm install --save moajs
     
 ## usage
 
@@ -68,7 +68,7 @@ mongoose支持的data type基本如下：
 
     
     
-2.destroy scaffold user,this will move user to `~/.express-g/xxxx`
+2.destroy scaffold user,this will move user to `~/.moajs/xxxx`
 
     exd user
     
