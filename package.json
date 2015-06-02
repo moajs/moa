@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "start": "npm publish .",
-    "test": "node test.js"
+    "test": "node test.js",
+    "exg":"node bin/exg.js user name:string password:string",
+    "exd":"node bin/exd.js user"
   },
   "preferGlobal": "true",
   "bin": {

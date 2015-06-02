@@ -9,6 +9,16 @@ var tpl = require('tpl_apply');
 
 // var file_path = __dirname;
 // var current_path = process.cwd();
+function getUserHome() {
+  return process.env[(process.platform == 'win32') ? 'USERPROFILE' : 'HOME'];
+}
+
+var cache_path = getUserHome() + '/.express-g/';
+
+mkdirp(cache_path, function (err) {
+    if (err) console.error(err)
+    else console.log('pow! create cache_path')
+});
 
 var _default_options = function (base_path){
   return {
@@ -92,7 +102,7 @@ g.prototype.all = function () {
 
 g.prototype.destroy = function () {
   var entity = this.model.entity;
-  var cache_path = '~/.express-g/' + Date.now();
+  var cache_path = getUserHome() +'/.express-g/' + Date.now();
   
   mkdirp(cache_path, function (err) {
       if (err) console.error(err)

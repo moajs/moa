@@ -5,3 +5,4 @@ public/html/*
 npm-debug.log
 tmp/**
 out/**/*
+app
