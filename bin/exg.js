@@ -16,11 +16,8 @@ console.log(argv)
 
 var model = {
   base_path : current_path + '/app',
-  entity:'user',
-  attr:{
-    username: 'string',
-    password: 'string'
-  }
+  entity:'entity',
+  attr:{}
 }
 
 if(argv.length < 2){
