@@ -50,7 +50,7 @@ app/movies
 
 ### cli   
 
-create scaffold user
+1.create scaffold user
 
     exg user name:string password:object
     
@@ -68,9 +68,13 @@ mongoose支持的data type基本如下：
 
     
     
-destroy scaffold user,this will move user to `~/.express-g/xxxx`
+2.destroy scaffold user,this will move user to `~/.express-g/xxxx`
 
     exd user
+    
+3.new a project in cli
+
+    exn new_project
 
 ## Contributing
 
