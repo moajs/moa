@@ -6,15 +6,15 @@
   "scripts": {
     "start": "npm publish .",
     "test": "node test.js",
-    "exg":"node bin/moag.js user name:string password:string uid:object",
-    "exd":"node bin/moad.js user",
-    "exn":"node bin/moan.js new_project"
+    "moag":"node bin/moag.js user name:string password:string uid:object",
+    "moad":"node bin/moad.js user",
+    "moan":"node bin/moan.js new_project"
   },
   "preferGlobal": "true",
   "bin": {
-    "exg": "bin/exg.js",
-    "exd": "bin/exd.js",
-    "exn": "bin/exn.js"
+    "moag": "bin/moag.js",
+    "moad": "bin/moad.js",
+    "moan": "bin/moan.js"
   },
   "repository": {
     "type": "git",
