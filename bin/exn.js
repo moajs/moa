@@ -23,7 +23,7 @@ if (!which('git')) {
   exit(1);
 }
 
-var clone = 'git clone --depth=1 https://github.com/i5ting/express-g-demo.git ' + project_name
+var clone = 'git clone --depth=1 https://github.com/moajs/moa-seed.git ' + project_name
 // Run external tool synchronously
 if (exec(clone).code !== 0) {
   echo('Error: Git clone failed');
