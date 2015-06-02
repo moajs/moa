@@ -1,13 +1,18 @@
 require('shelljs/global');
 
+var child_process = require('child_process');
+// var file_path = __dirname;
+var current_path = process.cwd();
+
 rm('-rf', 'out');
 
-// Copy files to release dir
-mkdir('-p', 'out/controllers');
-mkdir('-p', 'out/models');
-mkdir('-p', 'out/views');
-mkdir('-p', 'out/routes');
+var base = current_path + '/out/app'
 
+// Copy files to release dir
+mkdir('-p', base + '/controllers');
+mkdir('-p', base + '/models');
+mkdir('-p', base + '/views');
+mkdir('-p', base + '/routes');
 
 
 var model = require('./')

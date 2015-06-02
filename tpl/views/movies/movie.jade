@@ -3,13 +3,11 @@
 - var _type   = {{model}}._action == 'edit' ? "button"  : "submit"
 - var onClick  = {{model}}._action == 'edit' ?  "click_edit('{{model}}-" + {{model}}._action + "-form','/{{models}}/" + {{model}}._id + "/')" : ""
 form(id='{{model}}-#{ {{model}}._action}-form',action="#{_action}", method="#{_method}",role='form')
-  div(class="field")
-    label name
-    br
-    input(type='text',name='name',value="#{ {{model}} }.name == undefined ? '' : {{model}}.name}")
-  div(class="field")
-    label age
-    br
-    input(type='text',name='age',value="#{ {{model}} }.age == undefined ? '' : {{model}}.age}")
+  each n in [{{{keys}}}]
+    div(class="field")
+      label n
+      br
+      input(type='text',name='#{n}',value="#{ {{model}} }.name == undefined ? '' : {{model}}.name}")
+
   div(class="actions") 
     input(type='#{_type}',value='Submit',onClick='#{onClick}')
