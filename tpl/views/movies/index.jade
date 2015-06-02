@@ -6,8 +6,8 @@ block content
   table
     thead
       tr
-        th Name
-        th Age
+        each n in [{{{keys}}}]
+          th #{n}
         th(colspan="3")
     tbody
       each {{model}} in {{models}}
