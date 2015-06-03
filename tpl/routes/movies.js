@@ -3,6 +3,10 @@ var router = express.Router();
 
 var $ = require('../controllers/{{models}}_controller');
 
+
+// -- custom
+
+
 /**
  * Auto generate RESTful url routes.
  *
