@@ -29,7 +29,7 @@ exports.show = function (req, res, next) {
     ', params: ' + JSON.stringify(req.params));
   var id = req.params.id;
   
-  {{entity}}.getById(id, function(err, {{model}}){
+  {{entity}}.getById(id, function(err, {{model}}) {
     console.log({{model}});
     res.render('{{models}}/show', {
       {{model}} : {{model}}
@@ -43,7 +43,7 @@ exports.edit = function (req, res, next) {
     
   var id = req.params.id; 
   
-  {{entity}}.getById(id, function(err, {{model}}){
+  {{entity}}.getById(id, function (err, {{model}}) {
     console.log({{model}});
     {{model}}._action = 'edit';
     
@@ -57,13 +57,12 @@ exports.create = function (req, res, next) {
   console.log(req.method + ' /{{models}} => create, query: ' + JSON.stringify(req.query) + 
     ', params: ' + JSON.stringify(req.params) + ', body: ' + JSON.stringify(req.body));
   
-    {{entity}}.create({{keypair}}, function(err, {{model}}){
+    {{entity}}.create({{keypair}}, function (err, {{model}}) {
       console.log({{model}});
       res.render('{{models}}/show', {
         {{model}} : {{model}}
       })
     });
-   
 };
 
 exports.update = function (req, res, next) {
@@ -72,7 +71,7 @@ exports.update = function (req, res, next) {
     
     var id = req.params.id; 
   
-    {{entity}}.updateById(id,{{keypair}}, function(err, {{model}}){
+    {{entity}}.updateById(id,{{keypair}}, function (err, {{model}}) {
       console.log({{model}});
     
       res.json({
@@ -90,8 +89,9 @@ exports.update = function (req, res, next) {
 exports.destroy = function (req, res, next) {
   console.log(req.method + ' /{{models}}/:id => destroy, query: ' + JSON.stringify(req.query) + 
     ', params: ' + JSON.stringify(req.params) + ', body: ' + JSON.stringify(req.body));
+
   var id = req.params.id;
-  {{entity}}.deleteById(id, function(err){
+  {{entity}}.deleteById(id, function (err) {
     console.log(err);
     res.json({
       data:{},
