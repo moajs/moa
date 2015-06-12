@@ -6,6 +6,7 @@ var {{entity}} = require('../models/{{model}}');
 
 exports.list = function (req, res, next) {
   console.log(req.method + ' /{{models}} => list, query: ' + JSON.stringify(req.query));
+  
   {{entity}}.getAll(function(err, {{models}}){
     console.log({{models}});
     res.render('{{models}}/index', {
@@ -57,33 +58,33 @@ exports.create = function (req, res, next) {
   console.log(req.method + ' /{{models}} => create, query: ' + JSON.stringify(req.query) + 
     ', params: ' + JSON.stringify(req.params) + ', body: ' + JSON.stringify(req.body));
   
-    {{entity}}.create({{keypair}}, function (err, {{model}}) {
-      console.log({{model}});
-      res.render('{{models}}/show', {
-        {{model}} : {{model}}
-      })
-    });
+  {{entity}}.create({{keypair}}, function (err, {{model}}) {
+    console.log({{model}});
+    res.render('{{models}}/show', {
+      {{model}} : {{model}}
+    })
+  });
 };
 
 exports.update = function (req, res, next) {
   console.log(req.method + ' /{{models}}/:id => update, query: ' + JSON.stringify(req.query) + 
     ', params: ' + JSON.stringify(req.params) + ', body: ' + JSON.stringify(req.body));
     
-    var id = req.params.id; 
+  var id = req.params.id; 
+
+  {{entity}}.updateById(id,{{keypair}}, function (err, {{model}}) {
+    console.log({{model}});
   
-    {{entity}}.updateById(id,{{keypair}}, function (err, {{model}}) {
-      console.log({{model}});
-    
-      res.json({
-        data:{
-          redirect : '/{{models}}/' + id
-        },
-        status:{
-          code : 0,
-          msg  : 'delete success!'
-        }
-      });
+    res.json({
+      data:{
+        redirect : '/{{models}}/' + id
+      },
+      status:{
+        code : 0,
+        msg  : 'delete success!'
+      }
     });
+  });
 };
 
 exports.destroy = function (req, res, next) {
