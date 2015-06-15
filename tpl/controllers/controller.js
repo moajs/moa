@@ -112,9 +112,11 @@ exports.api = {
   list: function (req, res, next) {
     console.log(req.method + ' /{{models}} => list, query: ' + JSON.stringify(req.query));
 
-    var user_id = req.api_user._id;
-
-    {{entity}}.all({}, function (err, {{models}}) {
+    var api_user_id = req.api_user._id;
+    // - one
+    // - all
+    // - query
+    {{entity}}.all(function (err, {{models}}) {
       console.log({{models}});
       res.json({
         data:{
