@@ -1,7 +1,8 @@
 var express = require('express');
 var router = express.Router();
 
-var $             = require('../../controllers/{{models}}_controller');
+var $ = require('mount-controllers').{{models}}_controller;
+
 var $middlewares  = require('mount-middlewares');
 
 // route define
