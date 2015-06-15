@@ -80,6 +80,7 @@ mongoose支持的data type基本如下：
 
 ## History
 
+- v1.0.16 add controller api export
 - v1.0.4 add exd to destroy it
 - v1.0.2 rename index to /
 - v1.0.0 init
