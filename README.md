@@ -69,6 +69,12 @@ mongoose支持的data type基本如下：
 3.new a project in cli
 
     moan new_project
+    
+## test
+
+    npm run moag
+    npm run moad
+    npm run moan
 
 ## Contributing
 
