@@ -75,6 +75,11 @@ function _mkdir(t){
       if (err) console.error(err)
       else console.log('pow! create route_path')
   });
+  
+  mkdirp(t.route_path + '/api', function (err) {
+      if (err) console.error(err)
+      else console.log('pow! create route_api_path')
+  });
 }
 
 g.prototype.c = function () {
@@ -93,11 +98,16 @@ g.prototype.r = function () {
   require('./lib/route')(this)
 }
 
+g.prototype.r_api = function () {
+  require('./lib/route_api')(this)
+}
+
 g.prototype.all = function () {
   this.c();
   this.m();
   this.v();
   this.r();
+  this.r_api();
 }
 
 g.prototype.destroy = function () {
