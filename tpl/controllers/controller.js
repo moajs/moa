@@ -1,8 +1,10 @@
 /**
- * Created by sang on 01/06/14.
+ * Created by Moajs on 01/06/2015.
  */
 
-var {{entity}} = require('../models/{{model}}');
+var $models = require('mount-models');
+
+var {{entity}} = $models.{{model}};
 
 exports.list = function (req, res, next) {
   console.log(req.method + ' /{{models}} => list, query: ' + JSON.stringify(req.query));
