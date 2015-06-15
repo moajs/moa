@@ -1,7 +1,7 @@
 {
   "name": "moajs",
-  "version": "1.0.17",
-  "description": "",
+  "version": "1.0.18",
+  "description": "Moajs is a full stack framework based expressjs、mongoose、bluebird、mocha.",
   "main": "index.js",
   "scripts": {
     "start": "npm publish .",
