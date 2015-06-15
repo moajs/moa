@@ -103,3 +103,49 @@ exports.destroy = function (req, res, next) {
     });
   });
 };
+
+// -- custom
+// res.format({
+//   'text/plain': function(){
+//     res.send('hey');
+//   },
+//
+//   'text/html': function(){
+//     res.send('<p>hey</p>');
+//   },
+//
+//   'application/json': function(){
+//     res.send({ message: 'hey' });
+//   },
+//
+//   'default': function() {
+//     // log the request and respond with 406
+//     res.status(406).send('Not Acceptable');
+//   }
+// });
+//
+// exports.api = {
+//   list: function (req, res, next) {
+//     console.log(req.method + ' /groups => list, query: ' + JSON.stringify(req.query));
+//
+//     var user_id = req.api_user._id;
+//
+//     Group.query({ower_id: user_id}, function (err, groups) {
+//       console.log(groups);
+//       res.json({
+//         data:{
+//           groups : groups
+//         },
+//         status:{
+//           code  : 0,
+//           msg   : 'success'
+//         }
+//       })
+//     });
+//   },
+//   show: function (req, res, next) {
+//     res.json({
+//       aaa:'bbbb'
+//     })
+//   }
+// }
