@@ -113,9 +113,10 @@ exports.api = {
     console.log(req.method + ' /{{models}} => list, query: ' + JSON.stringify(req.query));
 
     var api_user_id = req.api_user._id;
-    // - one
-    // - all
-    // - query
+    // see https://github.com/moajs/mongoosedao api
+    // - one 获取一条记录
+    // - all 查询所有
+    // - query 按条件查询
     {{entity}}.all(function (err, {{models}}) {
       console.log({{models}});
       res.json({
