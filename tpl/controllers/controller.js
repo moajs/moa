@@ -120,7 +120,7 @@ exports.api = {
       console.log({{models}});
       res.json({
         data:{
-          groups : {{models}}
+          {{models}} : {{models}}
         },
         status:{
           code  : 0,
