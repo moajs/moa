@@ -90,12 +90,12 @@ exports.update = function (req, res, next) {
 };
 
 exports.destroy = function (req, res, next) {
-  console.log(req.method + ' /{{models}}/:id => destroy, query: ' + JSON.stringify(req.query) + 
-    ', params: ' + JSON.stringify(req.params) + ', body: ' + JSON.stringify(req.body));
-
   var id = req.params.id;
   {{entity}}.deleteById(id, function (err) {
-    console.log(err);
+    if (err) {
+      throw new Error(err);
+    }
+    
     res.json({
       data:{},
       status:{
