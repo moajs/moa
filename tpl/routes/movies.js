@@ -1,9 +1,16 @@
 var express = require('express');
 var router = express.Router();
 
-var $ = require('mount-controllers').{{models}}_controller;
+// mount all middlewares in app/middlewares, examples:
+// 
+// router.route('/')
+//  .get($middlewares.check_session_is_expired, $.list)
+//  .post($.create);
+// 
+var $middlewares  = require('mount-middlewares');
 
-// -- custom
+// core controller
+var $ = require('mount-controllers').{{models}}_controller;
 
 
 /**
@@ -32,6 +39,11 @@ router.route('/:id')
   .patch($.update)
   .get($.show)
   .delete($.destroy);
+
+
+// -- custom routes
+
+
 
 
 module.exports = router;
