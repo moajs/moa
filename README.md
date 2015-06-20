@@ -90,10 +90,10 @@ mongoose支持的data type基本如下：
 
 todo 
 
-- Test
-- Migration
-- Plugin
-- Deployments
+- [x] Test
+- [ ] Migration
+- [ ] Plugin
+- [ ] Deployments
 
 ## Contributing
 
