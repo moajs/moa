@@ -17,10 +17,9 @@ Moajs is a full stack framework based expressjs、mongoose、bluebird、mocha.
 
 ## Install
 
-
     npm install --save moajs
     
-## usage
+## Usage
 
 
 ### basic 
@@ -70,7 +69,7 @@ mongoose支持的data type基本如下：
 
     moan new_project
     
-## test
+## Test
 
     npm run moag
     npm run moad
