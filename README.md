@@ -75,6 +75,25 @@ mongoose支持的data type基本如下：
     npm run moag
     npm run moad
     npm run moan
+    
+## Components
+
+- Scaffold
+- Restful
+  - 7 methods for render view
+  - 5 methods for render api
+- MongooseDao
+- Middlewares
+  - session
+  - token-based api
+- Task(gulp-based)
+
+todo 
+
+- Test
+- Migration
+- Plugin
+- Deployments
 
 ## Contributing
 

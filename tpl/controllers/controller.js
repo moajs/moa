@@ -131,10 +131,8 @@ exports.api = {
         return res.api_error(err);
       }
       
-      Topic.query({ {{model}}_id: {{model}}_id}, function (err, {{models}}){
-        res.api({
-          {{models}} : {{models}}
-        });
+      res.api({
+        {{model}} : {{model}}
       });
     }); 
   },
@@ -160,6 +158,7 @@ exports.api = {
       }
   
       res.api({
+        {{model}} : {{model}},
         redirect : '/{{models}}/' + id
       })
     });
