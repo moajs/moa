@@ -110,29 +110,72 @@ exports.destroy = function (req, res, next) {
 
 exports.api = {
   list: function (req, res, next) {
-    console.log(req.method + ' /{{models}} => list, query: ' + JSON.stringify(req.query));
-
-    var api_user_id = req.api_user._id;
-    // see https://github.com/moajs/mongoosedao api
-    // - one 获取一条记录
-    // - all 查询所有
-    // - query 按条件查询
-    {{entity}}.all(function (err, {{models}}) {
+    var user_id = req.api_user._id;
+    
+    {{entity}}.query({ower_id: user_id}, function (err, {{models}}) {
       console.log({{models}});
-      res.json({
-        data:{
-          {{models}} : {{models}}
-        },
-        status:{
-          code  : 0,
-          msg   : 'success'
-        }
+      res.api({
+        {{models}} : {{models}}
       })
     });
   },
   show: function (req, res, next) {
-    res.json({
-      aaa:'bbbb'
-    })
+    var user_id = req.api_user._id;
+    var id = req.params.{{model}}_id;
+    
+    {{entity}}.getById(id, function (err, {{model}}) {
+      console.log({{model}});
+      
+      Topic.query({{{model}}_id: {{model}}_id}, function (err, topics){
+        res.api({
+          {{model}} : {{model}}
+        });
+      });
+    }); 
+  },
+  create: function (req, res, next) {
+    var user_id = req.api_user._id;
+  
+    {{entity}}.create({
+      name      : req.body.name,
+      desc      : req.body.desc,
+      ower_id   : user_id,
+      users     : [],
+      is_public : req.body.is_public
+    }, function (err, {{model}}) {
+      console.log({{model}});
+      res.json({
+        {{model}} : {{model}}
+      })
+    });
+  },
+  update: function (req, res, next) {
+    var user_id = req.api_user._id;
+    var id = req.params.{{model}}_id; 
+    {{entity}}.updateById(id,{
+      name      : req.body.name,
+      desc      : req.body.desc,
+      ower_id   : user_id,
+      users     : req.body.users,
+      is_public : req.body.is_public
+    }, function (err, {{model}}) {
+      console.log({{model}});
+  
+      res.api({
+        redirect : '/{{models}}/' + id
+      })
+    });
+  },
+  delete: function (req, res, next) {
+    var user_id = req.api_user._id;
+    var id = req.params.{{model}}_id; 
+    
+    {{entity}}.deleteById(id, function (err) {
+      if (err) {
+        return res.api_error(err);
+      }
+    
+      res.api({id:id})
+    });
   }
 }
