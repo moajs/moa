@@ -78,19 +78,16 @@ mongoose支持的data type基本如下：
     
 ## Components
 
-- Scaffold
-- Restful
+- [x] Scaffold
+- [x] Restful
   - 7 methods for render view
   - 5 methods for render api
-- MongooseDao
-- Middlewares
+- [x] MongooseDao
+- [x] Middlewares
   - session
   - token-based api
-- Task(gulp-based)
-
-todo 
-
-- [x] Test
+- [x] Task(gulp-based)
+- [ ] Test
 - [ ] Migration
 - [ ] Plugin
 - [ ] Deployments
