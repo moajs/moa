@@ -90,6 +90,7 @@ mongoose支持的data type基本如下：
 - [ ] Migration
 - [ ] Plugin
 - [ ] Deployments
+- [ ] Docs(http://github.com/andy0323/api-test)
 
 ## Contributing
 
