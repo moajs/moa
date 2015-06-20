@@ -112,8 +112,11 @@ exports.api = {
   list: function (req, res, next) {
     var user_id = req.api_user._id;
     
-    {{entity}}.query({ower_id: user_id}, function (err, {{models}}) {
-      console.log({{models}});
+    {{entity}}.query({}, function (err, {{models}}) {
+      if (err) {
+        return res.api_error(err);
+      }
+      
       res.api({
         {{models}} : {{models}}
       })
@@ -124,11 +127,13 @@ exports.api = {
     var id = req.params.{{model}}_id;
     
     {{entity}}.getById(id, function (err, {{model}}) {
-      console.log({{model}});
+      if (err) {
+        return res.api_error(err);
+      }
       
-      Topic.query({{{model}}_id: {{model}}_id}, function (err, topics){
+      Topic.query({ {{model}}_id: {{model}}_id}, function (err, {{models}}){
         res.api({
-          {{model}} : {{model}}
+          {{models}} : {{models}}
         });
       });
     }); 
@@ -136,14 +141,11 @@ exports.api = {
   create: function (req, res, next) {
     var user_id = req.api_user._id;
   
-    {{entity}}.create({
-      name      : req.body.name,
-      desc      : req.body.desc,
-      ower_id   : user_id,
-      users     : [],
-      is_public : req.body.is_public
-    }, function (err, {{model}}) {
-      console.log({{model}});
+    {{entity}}.create({{keypair}}, function (err, {{model}}) {
+      if (err) {
+        return res.api_error(err);
+      }
+      
       res.json({
         {{model}} : {{model}}
       })
@@ -152,14 +154,10 @@ exports.api = {
   update: function (req, res, next) {
     var user_id = req.api_user._id;
     var id = req.params.{{model}}_id; 
-    {{entity}}.updateById(id,{
-      name      : req.body.name,
-      desc      : req.body.desc,
-      ower_id   : user_id,
-      users     : req.body.users,
-      is_public : req.body.is_public
-    }, function (err, {{model}}) {
-      console.log({{model}});
+    {{entity}}.updateById(id, {{keypair}}, function (err, {{model}}) {
+      if (err) {
+        return res.api_error(err);
+      }
   
       res.api({
         redirect : '/{{models}}/' + id
