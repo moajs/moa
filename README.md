@@ -15,6 +15,12 @@ Moajs is a full stack framework based expressjs、mongoose、bluebird、mocha.
 
 > "Lost, like the Moa is lost" - Maori proverb
 
+## Requirement 
+
+- nodejs v0.10 + 
+- nvm    v0.25 +
+- gulp   v3.90 +
+
 ## Install
 
     npm install --save moajs

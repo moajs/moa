@@ -78,10 +78,10 @@ exports.update = function (req, res, next) {
     console.log({{model}});
   
     res.json({
-      data:{
+      data: {
         redirect : '/{{models}}/' + id
       },
-      status:{
+      status: {
         code : 0,
         msg  : 'delete success!'
       }
@@ -97,8 +97,8 @@ exports.destroy = function (req, res, next) {
     }
     
     res.json({
-      data:{},
-      status:{
+      data: {},
+      status: {
         code : 0,
         msg  : 'delete success!'
       }
@@ -172,7 +172,7 @@ exports.api = {
         return res.api_error(err);
       }
     
-      res.api({id:id})
+      res.api({id: id})
     });
   }
 }
