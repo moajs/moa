@@ -1,5 +1,5 @@
 /**
- * Created by Moajs on 01/06/2015.
+ * Created by Moajs on {{created_at}}.
  */
 
 var $models = require('mount-models');

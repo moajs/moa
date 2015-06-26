@@ -1,5 +1,5 @@
 /**
- * Created by alfred on 01/06/14.
+ * Created by alfred on {{created_at}}.
  */
 
 var mongoose    = require('mongoose');

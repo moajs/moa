@@ -6,9 +6,9 @@
   "scripts": {
     "start": "npm publish .",
     "test": "node test.js",
-    "moag":"node bin/moag.js user name:string password:string uid:object",
-    "moad":"node bin/moad.js user",
-    "moan":"node bin/moan.js new_project"
+    "moag": "node bin/moag.js user name:string password:string uid:object",
+    "moad": "node bin/moad.js user",
+    "moan": "node bin/moan.js new_project"
   },
   "preferGlobal": "true",
   "bin": {
@@ -29,10 +29,9 @@
   "dependencies": {
     "inflected": "^1.1.6",
     "mkdirp": "^0.5.1",
-    "tpl_apply": "^1.0.2",
-    "shelljs": "^0.5.0"
+    "moment": "^2.10.3",
+    "shelljs": "^0.5.0",
+    "tpl_apply": "^1.0.2"
   },
-  "devDependencies": {
-    
-  }
+  "devDependencies": {}
 }
