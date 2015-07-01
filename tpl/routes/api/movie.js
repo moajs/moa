@@ -1,9 +1,9 @@
 var express = require('express');
 var router = express.Router();
 
-var $ = require('mount-controllers').{{models}}_controller;
+var $ = require('mount-controllers')(__dirname).{{models}}_controller;
 
-var $middlewares  = require('mount-middlewares');
+var $middlewares  = require('mount-middlewares')(__dirname);
 
 // route define
 router.get('/list', $middlewares.check_api_token, $.api.list);

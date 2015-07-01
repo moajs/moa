@@ -7,10 +7,10 @@ var router = express.Router();
 //  .get($middlewares.check_session_is_expired, $.list)
 //  .post($.create);
 // 
-var $middlewares  = require('mount-middlewares');
+var $middlewares  = require('mount-middlewares')(__dirname);
 
 // core controller
-var $ = require('mount-controllers').{{models}}_controller;
+var $ = require('mount-controllers')(__dirname).{{models}}_controller;
 
 
 /**
