@@ -43,6 +43,8 @@ if (exec(npm_install).code !== 0) {
 }else{
   echo('Success: npm_install finished!');
 }
+
+echo('');
 echo('Congratulations! moan finished!');
 echo('');
 
