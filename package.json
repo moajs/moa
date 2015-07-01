@@ -12,6 +12,7 @@
   },
   "preferGlobal": "true",
   "bin": {
+    "moa"         : "bin/moa.js",
     "moag"        : "bin/moag.js",
     "moad"        : "bin/moad.js",
     "moan"        : "bin/moan.js",
