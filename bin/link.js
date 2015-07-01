@@ -14,9 +14,9 @@ function main(){
   var root_path = root.join('/')
   
   dirw.dir(root_path + '/node_modules', function(dir, dir_name){
-    if(dir_name == 'bin' || dir_name == '.bin'){
-      return;
-    }
+    // if(dir_name == 'bin' || dir_name == '.bin'){
+    //   return;
+    // }
   
     _create_symlink(dir, dir_name)
   });
