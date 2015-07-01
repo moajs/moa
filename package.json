@@ -53,7 +53,7 @@
     "morgan": "~1.5.3",
     "mount-controllers": "^1.0.3",
     "mount-middlewares": "^1.0.2",
-    "mount-models": "^1.0.3",
+    "mount-models": "^1.0.5",
     "mount-routes": "^1.0.3",
     "mount-services": "^1.0.4",
     "multer": "^0.1.8",
