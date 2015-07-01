@@ -36,7 +36,7 @@ cd(project_name);
 
 echo('npm install...');
 
-var npm_install = 'npm install'
+var npm_install = 'moalink'
 if (exec(npm_install).code !== 0) {
   echo('Error: npm_install failed');
   exit(1);
