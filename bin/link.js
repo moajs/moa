@@ -5,7 +5,7 @@ var current_path = process.cwd();
 
 var dirw = require('dirw');
 
-var dest_path = 'node_modules2';
+var dest_path = 'node_modules';
 
 function main(){
   var root = __dirname.split('/')
