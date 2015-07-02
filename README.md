@@ -97,6 +97,7 @@ mongoose支持的data type基本如下：
 - [ ] Plugin
 - [ ] Deployments
 - [ ] Docs(http://github.com/andy0323/api-test)
+- [ ] refact api to router.api('get', middlewares, $.api.update) 在考虑要不要做
 
 ## Contributing
 

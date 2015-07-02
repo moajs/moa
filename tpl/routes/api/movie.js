@@ -1,6 +1,7 @@
 var express = require('express');
 var router = express.Router();
 
+// var res_api       = require('res.api');
 var $ = require('mount-controllers')(__dirname).{{models}}_controller;
 
 var $middlewares  = require('mount-middlewares')(__dirname);
