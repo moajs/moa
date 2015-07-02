@@ -27,29 +27,22 @@ Moajs is a full stack framework based expressjs、mongoose、bluebird、mocha.
     
 ## Usage
 
+### help
 
-### basic 
+    ➜  moajs git:(master) moa
+    Moajs HELP:
 
-    var current_path = process.cwd();
-    var base = current_path + '/out/app'
-    
-    var model = {
-      base_path : base,
-      entity:'user',
-      attr:{
-        username: 'string',
-        password: 'string'
-      }
-    }
+    moan: 【创建新项目】 moan new_project_name
+    moag: 【创建脚手架】 moag user name:string password:string uid:object
+    moad: 【移除脚手架】 moad user
 
-    var Generator = require('./index');
-    var g = new Generator(model,{});
+    Have a good day! Moaer
 
-    g.all();
+### new a project in cli
 
-### cli   
+    moan new_project
 
-1.create scaffold user
+### create scaffold user
 
     moag user name:string password:object
     
@@ -67,13 +60,9 @@ mongoose支持的data type基本如下：
 
     
     
-2.destroy scaffold user,this will move user to `~/.moajs/xxxx`
+### destroy scaffold user,this will move user to `~/.moajs/xxxx`
 
     moad user
-    
-3.new a project in cli
-
-    moan new_project
     
 ## Test
 
