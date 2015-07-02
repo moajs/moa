@@ -56,14 +56,14 @@ Moajs is a full stack framework based expressjs、mongoose、bluebird、mocha.
     
 mongoose支持的data type基本如下：
 
-• String -> string
-• Number-> number
-• Date -> date
-• Boolean -> boolean
-• Buffer -> buffer
-• ObjectId -> object
-• Mixed  -> mixed
-• Array -> array
+- String -> string
+- Number-> number
+- Date -> date
+- Boolean -> boolean
+- Buffer -> buffer
+- ObjectId -> object
+- Mixed  -> mixed
+- Array -> array
 
     
     
