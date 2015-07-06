@@ -123,8 +123,9 @@ g.prototype.destroy = function () {
   var m = this.model_path  +'/'+ entity + ".js";
   var v = this.view_path  +'/'+ Inflector.pluralize(entity) + "/";
   var r = this.route_path  +'/'+ Inflector.pluralize(entity) + ".js";
+  var a = this.route_path  +'/api/'+ Inflector.pluralize(entity) + ".js";
   
-  [c,m,v,r].forEach(function(file){
+  [c,m,v,r,a].forEach(function(file){
     mv('-f', file, cache_path + '/');
   });
 }

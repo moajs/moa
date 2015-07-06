@@ -15,7 +15,7 @@ var model = {
 }
 
 if(argv.length < 1){
-  return console.log('Usages: exd user');
+  return console.log('Usages: moad user');
 }
 
 model.entity = argv[1];
