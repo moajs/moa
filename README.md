@@ -104,6 +104,7 @@ mongoose支持的data type基本如下：
 
 ## History
 
+- v1.0.21 add nmm plugin
 - v1.0.17 add api generator
 - v1.0.16 add controller api export
 - v1.0.4 add exd to destroy it
