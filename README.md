@@ -1,15 +1,21 @@
 # Moajs
 
-Moajs is a full stack framework based expressjs、mongoose、bluebird、mocha.
+Moajs is a open-source web framework based expressjs、mongoose、bluebird、mocha that’s optimized
+for programmer happiness and sustainable productivity. It lets you
+write beautiful code by favoring convention over configuration.
 
 [![gitter][gitter-image]][gitter-url]
 [![NPM version][npm-image]][npm-url]
 
-* Allows to configure cache size and policy.
-* auto mount routes
-* use mongoosedao for data access
-* use gulp as task management
-* live reload.
+* Modular && Plugable
+* Scaffold
+* Model-View-Controller (MVC) pattern
+* Restful Api
+* Auto mount routes
+* Mongoosedao for data access
+* Gulp as task management
+* Live reload
+
 
 ![](doc/moa.jpg)
 
