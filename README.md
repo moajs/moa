@@ -1,5 +1,7 @@
 # Moajs
 
+[![Join the chat at https://gitter.im/moajs/moa](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/moajs/moa?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 Moajs is a open-source web framework based expressjs、mongoose、bluebird、mocha that’s optimized
 for programmer happiness and sustainable productivity. It lets you
 write beautiful code by favoring convention over configuration.
