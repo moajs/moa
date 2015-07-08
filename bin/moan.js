@@ -32,6 +32,14 @@ if (exec(clone).code !== 0) {
   echo('Success: exn clone finished!');
 }
 
+var clone_post = 'rm -rf ' + project_name + '/.git';
+if (exec(clone_post).code !== 0) {
+  echo('Error: Git clone_post failed');
+  exit(1);
+}else{
+  echo('Success: exn clone_post finished!');
+}
+
 cd(project_name);
 
 echo('npm install...');
