@@ -64,8 +64,6 @@ mongoose支持的data type基本如下：
 - Mixed  -> mixed
 - Array -> array
 
-    
-    
 ### destroy scaffold user,this will move user to `~/.moajs/xxxx`
 
     moad user
