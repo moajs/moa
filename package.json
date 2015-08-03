@@ -16,6 +16,7 @@
     "moag": "bin/moag.js",
     "moad": "bin/moad.js",
     "moan": "bin/moan.js",
+    "moas": "bin/moas.js",
     "moalink": "bin/link.js"
   },
   "repository": {

@@ -41,6 +41,7 @@ write beautiful code by favoring convention over configuration.
     moan: 【创建新项目】 moan new_project_name
     moag: 【创建脚手架】 moag user name:string password:string uid:object
     moad: 【移除脚手架】 moad user
+    moas: 【启动服务器】 moas
 
     Have a good day! Moaer
 
