@@ -30,7 +30,7 @@ var folder_exists = fs.existsSync(cache_dir);
 console.log(home_dir + ' - ' + folder_exists);
 
 if(!folder_exists){
-  var clone = 'git clone --depth=1 https://github.com/moajs/moa-seed.git '+ cache_dir;
+  var clone = 'git clone --depth=1 https://github.com/moajs/moa-seed.git '+ cache_dir + ' && cd ~/.moa && moalink && cp config/default.example.json config/default.json';
   // Run external tool synchronously
   if (exec(clone).code !== 0) {
     echo('Error: Git clone failed');
@@ -42,7 +42,7 @@ if(!folder_exists){
   console.log(cache_dir + ' is already exist, if you want update force,please use -f option');
 }
 
-var clone_cp = 'cp -rf ' + home_dir + '/.moa ' + project_name + '&& cd '+ project_name +' && npm install --save moa-plugin-user && cp config/default.example.json config/default.json';
+var clone_cp = 'cp -rf ' + home_dir + '/.moa ' + project_name + '&& cd '+ project_name +' && npm install --save moa-plugin-user ';
 console.log(clone_cp)
 if (exec(clone_cp).code !== 0) {
   echo('Error: Git clone_cp failed');
