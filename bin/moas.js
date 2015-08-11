@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 require('shelljs/global');
 
+var fs            = require('fs')
 var child_process = require('child_process');
 
 var argv = process.argv;
@@ -9,6 +10,7 @@ argv.shift();
 // var file_path = __dirname;
 var current_path = process.cwd();
 console.log(current_path);
+var home_dir = process.env.HOME || process.env.HOMEPATH || process.env.USERPROFILE;
 
 if(argv.length < 1){
   return console.log('Usages: exn project_name');
@@ -19,16 +21,32 @@ if (!which('git')) {
   exit(1);
 }
 
-process.chdir( current_path);
-var clone = 'node ~/.moa/bin/www'
-// Run external tool synchronously
-if (exec(clone).code !== 0) {
-  echo('Error: Moa server start failed');
-  exit(1);
-}else{
-  echo('Success: Moa server start finished!');
-}
- 
+// console.log(home_dir + '/config')
+// console.log(current_path)
+// cp('-Rf', home_dir + '/config', current_path);
+// rm('-rf', '.gitignore');
+
+var files = [
+  'config',
+  'app/views/layouts',
+  'app/views/error.jade',
+  'app/middlewares/check_api_token.js'
+];
+
+link();
+// unlink();
+
+setTimeout(function(){
+  process.chdir( current_path );
+  var clone = 'node ~/.moa/bin/www'
+  // Run external tool synchronously
+  if (exec(clone).code !== 0) {
+    echo('Error: Moa server start failed');
+    exit(1);
+  }else{
+    echo('Success: Moa server start finished!');
+  }
+}, 200);
 
 echo('');
 echo('Congratulations! moan finished!');
@@ -39,3 +57,74 @@ echo('step 1: 【启动服务器】 npm start');
 echo('step 2: 【创建脚手架】 moag user name:string password:string uid:object');
 echo('step 3: 【如果需要，移除已有脚手架】 moad user');
 echo('Have a good day! Moaer');
+
+
+process.stdin.resume();//so the program will not close instantly
+
+function exitHandler(options, err) {
+  unlink();
+    //
+  // if (options.cleanup) console.log('clean');
+  // if (err) console.log(err.stack);
+  // if (options.exit) process.exit();
+}
+
+//do something when app is closing
+// process.on('exit', exitHandler.bind(null,{cleanup:true}));
+//
+// //catches ctrl+c event
+// process.on('SIGINT', exitHandler.bind(null, {exit:true}));
+//
+// //catches uncaught exceptions
+// process.on('uncaughtException', exitHandler.bind(null, {exit:true}));
+
+process.on( 'exit', function() {
+  console.log( "\nGracefully shutting down from exit" );
+  // some other closing procedures go here
+  process.exit( );
+})
+
+
+process.on( 'SIGINT', function() {
+  console.log( "\nGracefully shutting down from SIGINT (Ctrl-C)" );
+  // some other closing procedures go here
+  process.exit( );
+})
+
+
+process.on( 'SIGINT', function() {
+  console.log( "\nGracefully shutting down from SIGINT (Ctrl-C)" );
+  // some other closing procedures go here
+  process.exit( );
+})
+
+
+
+function link(){
+  files.forEach(function(file){
+    var src   = home_dir + '/.moa/' + file;
+    var dest  = current_path + '/' + file;
+    fs.appendFileSync('.gitignore',dest+'\n');
+    console.log(src + ' - ' + dest);
+    _create_symlink(src, file) ;
+  });
+}
+
+function unlink(){
+  console.log('unlink...');
+  files.forEach(function(file){
+    var src   = home_dir + '/.moa/' + file;
+    var dest  = current_path + '/' + file;
+    
+    fs.unlinkSync(dest);
+  });
+}
+
+function _create_symlink(dir, dir_name) {
+  var link = require('fs-symlink')
+ 
+  console.log(dir + ' - ' + dir_name);
+  link(dir, current_path + '/' + dir_name,  'junction').then(function () {
+    console.log('copy modudle ' + dir_name + ' finished');
+  })
+}
