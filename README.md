@@ -68,7 +68,15 @@ mongoose支持的data type基本如下：
 ### destroy scaffold user,this will move user to `~/.moajs/xxxx`
 
     moad user
-    
+
+### moas
+
+moas = moa server, runtime for test plugin
+
+解决单个插件模块测试问题
+
+使用`nmm init`初始化moa插件，然后使用moag来生成代码，并编写里面的功能。如果需要测试插件功能，可以使用moas来模拟moa运行时环境。
+
 ## Test
 
     npm run moag
