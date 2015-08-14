@@ -7,18 +7,14 @@ var fs            = require('fs');
 var argv = process.argv;
 argv.shift();
 
-// var file_path = __dirname;
-var current_path = process.cwd();
-
-
 if(argv.length < 1){
   return console.log('Usages: exn project_name');
 }
 
-
-var project_name = argv[1];
-
-var home_dir = process.env.HOME || process.env.HOMEPATH || process.env.USERPROFILE;
+var file_path  = __dirname;
+var current_path  = process.cwd();
+var project_name  = argv[1];
+var home_dir      = process.env.HOME || process.env.HOMEPATH || process.env.USERPROFILE;
 
 
 if (!which('git')) {
@@ -27,56 +23,54 @@ if (!which('git')) {
 }
 var cache_dir = home_dir + '/.moa';
 var folder_exists = fs.existsSync(cache_dir);
-console.log(home_dir + ' - ' + folder_exists);
+// console.log(home_dir + ' - ' + folder_exists);
 
-if(!folder_exists){
-  var clone = 'git clone --depth=1 https://github.com/moajs/moa-seed.git '+ cache_dir + ' && cd ~/.moa && moalink && cp config/default.example.json config/default.json';
-  // Run external tool synchronously
-  if (exec(clone).code !== 0) {
-    echo('Error: Git clone failed');
-    exit(1);
-  }else{
-    echo('Success: exn clone finished!');
+for(var i in argv){
+  var _argv = argv[i];
+  if(_argv == '-f'  || _argv == '--force'){
+    // rm('-rf', home_dir + '/.moa');
+    folder_exists = false;
   }
-}else{
-  console.log(cache_dir + ' is already exist, if you want update force,please use -f option');
 }
+// TODO: refact with promise
+setTimeout(function(){
 
-var clone_cp = 'cp -rf ' + home_dir + '/.moa ' + project_name + '&& cd '+ project_name +' && npm install --save moa-plugin-user ';
-console.log(clone_cp)
-if (exec(clone_cp).code !== 0) {
-  echo('Error: Git clone_cp failed');
-  exit(1);
-}else{
-  echo('Success: exn clone_cp finished!');
-}
+  if(!folder_exists){
+    console.log('start clone moa-seed to ~/.moa');
+    var clone = 'rm -rf ~/.moa && git clone --depth=1 https://github.com/moajs/moa-seed.git ' + '/' +cache_dir + ' && cd ~/.moa && moalink && cp config/default.example.json config/default.json   ';
+    // Run external tool synchronously
+    if (exec(clone).code !== 0) {
+      echo('Error: Git clone failed');
+      exit(1);
+    }else{
+      child_process.execFile(file_path + '/moan-after.sh', [], {cwd:current_path},function (error,stdout,stderr) {
+        if (error !== null) {
+          console.log('start moan-after.sh here exec error: ' + error);
+        }else{
+          echo('Success: moan clone finished!');
+        }
+      });
+      
+    }
+  }else{
+    console.log(cache_dir + ' is already exist, if you want update force,please use -f option');
+  }
 
-var clone_post = 'rm -rf ' + project_name + '/.git && cd ' + project_name;
-if (exec(clone_post).code !== 0) {
-  echo('Error: Git clone_post failed');
-  exit(1);
-}else{
-  echo('Success: exn clone_post finished!');
-}
+  child_process.execFile(file_path + '/moan-exist.sh', [project_name], {cwd:current_path},function (error,stdout,stderr) {
+    if (error !== null) {
+      console.log('start moan-a.sh here exec error: ' + error);
+    }else{
+      // console.log('start mongo here success!')
+      
+      echo('');
+      echo('Congratulations! moan finished!');
+      echo('');
 
-cd(project_name);
-
-echo('npm install...');
-
-var npm_install = 'moalink'
-if (exec(npm_install).code !== 0) {
-  echo('Error: npm_install failed');
-  exit(1);
-}else{
-  echo('Success: npm_install finished!');
-}
-
-echo('');
-echo('Congratulations! moan finished!');
-echo('');
-
-echo('step 0: 【修改配置】 cp config/default.example.json to config/default.json');
-echo('step 1: 【启动服务器】 npm start');
-echo('step 2: 【创建脚手架】 moag user name:string password:string uid:object');
-echo('step 3: 【如果需要，移除已有脚手架】 moad user');
-echo('Have a good day! Moaer');
+      echo('step 0: 【修改配置】 cp config/default.example.json to config/default.json');
+      echo('step 1: 【启动服务器】 npm start');
+      echo('step 2: 【创建脚手架】 moag user name:string password:string uid:object');
+      echo('step 3: 【如果需要，移除已有脚手架】 moad user');
+      echo('Have a good day! Moaer');
+    }
+  });
+}, 200);
