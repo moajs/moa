@@ -48,7 +48,11 @@ write beautiful code by favoring convention over configuration.
 ### new a project in cli
 
     moan new_project
+    
+or force update with moa-seed latest version
 
+    moan new_project -f
+    
 ### create scaffold user
 
     moag user name:string password:object
