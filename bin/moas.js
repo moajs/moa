@@ -7,7 +7,11 @@ var child_process = require('child_process');
 var argv = process.argv;
 argv.shift();
 
-// var file_path = __dirname;
+var file_path = __dirname;
+var files = __dirname.split('/');
+files.pop();
+file_path = files.join('/')
+
 var current_path = process.cwd();
 console.log(current_path);
 var home_dir = process.env.HOME || process.env.HOMEPATH || process.env.USERPROFILE;
@@ -38,7 +42,10 @@ link();
 
 setTimeout(function(){
   process.chdir( current_path );
-  var clone = 'node ~/.moa/bin/www'
+  var server = file_path + "/node_modules/.bin/nodemon";
+  var clone = server + ' ~/.moa/bin/www'
+  
+  // console.log('[SERVER START] ' + clone)
   // Run external tool synchronously
   if (exec(clone).code !== 0) {
     echo('Error: Moa server start failed');
