@@ -1,5 +1,5 @@
 #! /bin/bash
 
-cd ~/.moa && moalink && cp config/mongodb.example.js  config/mongodb.js
+cd ~/.moa && moalink && cp ~/.moa/config/mongodb.example.js  ~/.moa/config/mongodb.js
 
 echo 'moan finish!' 
