@@ -30,7 +30,7 @@ write beautiful code by favoring convention over configuration.
 
 ## Install
 
-    npm install --save moajs
+    [sudo] npm install -g moajs
     
 ## Usage
 
