@@ -37,7 +37,7 @@ setTimeout(function(){
 
   if(!folder_exists){
     console.log('start clone moa-seed to ~/.moa');
-    var clone = 'rm -rf ~/.moa && git clone --depth=1 https://github.com/moajs/moa-seed.git ' + '/' +cache_dir + ' && cd ~/.moa && moalink && cp config/default.example.json config/default.json   ';
+    var clone = 'rm -rf ~/.moa && git clone --depth=1 https://github.com/moajs/moa-seed.git ' + '/' +cache_dir + ' && cd ~/.moa && moalink && cp config/mongodb.example.js config/mongodb.js   ';
     // Run external tool synchronously
     if (exec(clone).code !== 0) {
       echo('Error: Git clone failed');
