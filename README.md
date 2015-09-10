@@ -82,6 +82,19 @@ moas = moa server, runtime for test plugin
 
 使用`nmm init`初始化moa插件，然后使用moag来生成代码，并编写里面的功能。如果需要测试插件功能，可以使用moas来模拟moa运行时环境。
 
+
+```
+cd wms-plugin-warehouse
+moalink
+moas
+```
+
+如果使用自定义端口，可以这样
+
+```
+export PORT=3009 && moas
+```
+
 ## Test
 
     npm run moag
