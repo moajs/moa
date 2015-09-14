@@ -140,12 +140,12 @@ https://github.com/moa-modules/
 1） 更新npm版本，必须在2.11以上
 
     npm install -g npm
-
-2) 用户登录，注意是该模块的拥有者
+ 
+2） 用户登录，注意是该模块的拥有者
 
     npm login
     
-3）检查~/.npmrc,是否存在_authToken，如无，请更新npm版本去
+3） 检查~/.npmrc,是否存在_authToken，如无，请更新npm版本去
 
 ```
 [deploy@iZ251uvtr2bZ moajs]$ cat ~/.npmrc 
