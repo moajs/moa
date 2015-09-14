@@ -130,6 +130,8 @@ https://github.com/moa-modules/
 - moa-plugin-user
 - moa-plugin-wechat
 
+如果你开发了moa插件，开源的，请邮件或者issue通知我 shiren1118@126.com
+
 ### npm私有模块在服务器安装不上？
 
 私有模块的好处是必须是模块拥有者才能下载，npmjs上是7美元/月，可以无限量的上传。私有模块无法被其他源copy，所以要保证源是`registry=https://registry.npmjs.org/`或者
