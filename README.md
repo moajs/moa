@@ -119,6 +119,34 @@ export PORT=3009 && moas
 - [ ] Docs(http://github.com/andy0323/api-test)
 - [ ] refact api to router.api('get', middlewares, $.api.update) 在考虑要不要做
 
+## FAQ
+
+### npm私有模块在服务器安装不上？
+
+私有模块的好处是必须是模块拥有者才能下载，npmjs上是7美元/月，可以无限量的上传。私有模块无法被其他源copy，所以要保证源是`registry=https://registry.npmjs.org/`或者
+`nrm use npmjs`.
+
+1） 更新npm版本，必须在2.11以上
+
+    npm install -g npm
+
+2) 用户登录，注意是该模块的拥有者
+
+    npm login
+    
+3）检查~/.npmrc,是否存在_authToken，如无，请更新npm版本去
+
+```
+[deploy@iZ251uvtr2bZ moajs]$ cat ~/.npmrc 
+registry=https://registry.npmjs.org/
+//registry.npmjs.org/:_authToken=fc83b39-7bfa-47b7-9f8c-ed91652613
+```
+
+4） 安装你的私有插件吧，下面这句是安装不上的，就是给大家看看
+
+    npm install @i5ting/wms-plugin-warehouse
+    
+
 ## Contributing
 
 1. Fork it
