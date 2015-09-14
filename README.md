@@ -121,6 +121,15 @@ export PORT=3009 && moas
 
 ## FAQ
 
+### moa官方模块
+
+https://github.com/moa-modules/
+
+目前只有2个插件
+
+- moa-plugin-user
+- moa-plugin-wechat
+
 ### npm私有模块在服务器安装不上？
 
 私有模块的好处是必须是模块拥有者才能下载，npmjs上是7美元/月，可以无限量的上传。私有模块无法被其他源copy，所以要保证源是`registry=https://registry.npmjs.org/`或者
