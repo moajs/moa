@@ -112,7 +112,7 @@ export PORT=3009 && moas
   - session
   - token-based api
 - [x] Task(gulp-based)
-- [x] Plugin(implement)
+- [x] Plugin(implement)(支持public模块和private模块)
 - [ ] Test
 - [ ] Migration
 - [ ] Deployments
