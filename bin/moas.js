@@ -25,11 +25,6 @@ if (!which('git')) {
   exit(1);
 }
 
-// console.log(home_dir + '/config')
-// console.log(current_path)
-// cp('-Rf', home_dir + '/config', current_path);
-// rm('-rf', '.gitignore');
-
 var files = [
   'config',
   'app/views/layouts',
@@ -65,47 +60,28 @@ echo('step 2: 【创建脚手架】 moag user name:string password:string uid:ob
 echo('step 3: 【如果需要，移除已有脚手架】 moad user');
 echo('Have a good day! Moaer');
 
-
 process.stdin.resume();//so the program will not close instantly
 
 function exitHandler(options, err) {
   unlink();
-    //
-  // if (options.cleanup) console.log('clean');
-  // if (err) console.log(err.stack);
-  // if (options.exit) process.exit();
 }
-
-//do something when app is closing
-// process.on('exit', exitHandler.bind(null,{cleanup:true}));
-//
-// //catches ctrl+c event
-// process.on('SIGINT', exitHandler.bind(null, {exit:true}));
-//
-// //catches uncaught exceptions
-// process.on('uncaughtException', exitHandler.bind(null, {exit:true}));
-
 process.on( 'exit', function() {
   console.log( "\nGracefully shutting down from exit" );
   // some other closing procedures go here
   process.exit( );
 })
 
-
 process.on( 'SIGINT', function() {
   console.log( "\nGracefully shutting down from SIGINT (Ctrl-C)" );
   // some other closing procedures go here
   process.exit( );
 })
 
-
 process.on( 'SIGINT', function() {
   console.log( "\nGracefully shutting down from SIGINT (Ctrl-C)" );
   // some other closing procedures go here
   process.exit( );
 })
-
-
 
 function link(){
   files.forEach(function(file){
