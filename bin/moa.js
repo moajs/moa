@@ -1,6 +1,19 @@
 #!/usr/bin/env node
 require('shelljs/global');
- 
+
+var program = require('commander');
+
+var version = require('../package.json').version
+program
+  .version(version)
+  .parse(process.argv);
+//
+// console.log('you ordered a pizza with:');
+// if (program.peppers) console.log('  - peppers');
+// if (program.pineapple) console.log('  - pineapple');
+// if (program.bbqSauce) console.log('  - bbq');
+// console.log('  - %s cheese', program.cheese);
+
 echo('Moajs HELP:');
 echo('');
 echo('moan: 【创建新项目】 moan new_project_name');
