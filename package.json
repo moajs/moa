@@ -52,7 +52,7 @@
     "mkdirp": "^0.5.1",
     "moa-middlewares": "^1.0.2",
     "moment": "^2.10.3",
-    "mongoose": "^4.0.4",
+    "mongoose": "^5.0.0",
     "mongoosedao": "^1.0.6",
     "morgan": "~1.5.3",
     "mount-controllers": "^1.0.7",
